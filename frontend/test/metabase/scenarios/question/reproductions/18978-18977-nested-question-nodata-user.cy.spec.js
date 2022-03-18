@@ -1,4 +1,10 @@
-import { restore, popover, visitQuestion } from "__support__/e2e/cypress";
+import {
+  restore,
+  popover,
+  navigationSidebar,
+  openNavigationSidebar,
+  visitQuestion,
+} from "__support__/e2e/cypress";
 
 describe("18978, 18977", () => {
   beforeEach(() => {
@@ -14,8 +20,9 @@ describe("18978, 18977", () => {
     }).then(({ body: { id } }) => {
       cy.signIn("nodata");
       visitQuestion(id);
+      openNavigationSidebar();
 
-      cy.get(".Nav").within(() => {
+      navigationSidebar().within(() => {
         cy.findByText(/Browse data/i).should("not.exist");
         cy.icon("add").click();
       });
