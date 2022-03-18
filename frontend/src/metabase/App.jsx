@@ -115,7 +115,7 @@ export default class App extends Component {
           {errorPage ? (
             getErrorComponent(errorPage)
           ) : (
-            <div className="full overflow-auto flex flex-column">
+            <main className="full overflow-auto flex flex-column">
               <div
                 className="full flex align-center bg-white border-bottom px2 relative z4"
                 id="mainAppBar"
@@ -138,7 +138,7 @@ export default class App extends Component {
                 </div>
               </div>
               {children}
-            </div>
+            </main>
           )}
           <UndoListing />
           <StatusListing />
