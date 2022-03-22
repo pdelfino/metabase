@@ -3,7 +3,7 @@ name: E2E Tests
 on:
   push:
     branches:
-      - 'master'
+      - 'e2e-moar-tests'
 
 jobs:
 
@@ -49,6 +49,7 @@ jobs:
         edition: [oss, ee]
         folder:
           - "binning"
+          - "collections"
           - "custom-column"
           - "dashboard"
           - "dashboard-filters"
