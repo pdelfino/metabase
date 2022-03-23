@@ -142,6 +142,7 @@ const mapStateToProps = ({ currentUser }) => ({ currentUser });
 export default _.compose(
   Collection.loadList({
     query: () => ({ tree: true }),
+    reload: true,
   }),
   connect(mapStateToProps),
 )(SavedQuestionPicker);
